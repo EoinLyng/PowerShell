@@ -30,9 +30,21 @@ The recommended branch structure of "Test" and "dev" branches was created in Git
 "git checkout -b B-23122-001" was run to create a new bugfix branch
 Once the bugfix branch was checked out I copied my working files into the git directory locally to fix the bug
 "git add ." wwas the run followed by "git status" to show the newly added files in the bugfix branch. 
+  git commit -m "Bug Fixed" "added working files to feature branch with text Bug Fixed"
+The dev branch was then checked by running "git checkout dev" out and the changes from the bugfix branch merged by running "git merge B-23122-001"
+The Test branch was then checked by running "git checkout Test" out and the changes from the dev branch merged by running "git merge dev"
+The main branch was then checked by running "git checkout dev" out and the changes from the Test branch merged by running "git merge Test"
+The main ranch was checked out and "git push" run to publish the fixed bug to GitHub
+Each of the branches were then check out again and the following commands were run to merge changes to Github
+- git push --set-upstream origin Test
+- git push --set-upstream origin dev
+- git push --set-upstream origin B-23122-001 
+This caused a Create a pull request for 'B-23122-001' on GitHub however when the link https://github.com/EoinLyng/PowerShell/pull/new/B-23122-001 was followed gave a message "Nothing to comapare) as the changes were already merged into main and B-23122-001 branch was now in Github.
+
+The branch B-23122-001 would normally then be deleted following best recommended practices however to show the full history it was not in this assignment.
 
 
-I also investigated and tested an alternative method of branching using gitflow which is not as popular now as the trunking development method but found it an interesting alternative which worked.
+I also investigated and tested an alternative method of branching using gitflow which is not as popular now as the trunking development method but found it an interesting alternative which also worked.
 
 These were the commands used in that method.
 
@@ -59,21 +71,5 @@ Summary of actions
  And finally a "git push" to push the changes to my Github repo
 
 
-
-git checkout main
-
-A new feature branch was created and checkout by running "git checkout -b F231228-001"
-Once the feature branch was checked out I copied my working files into the git directory locally
-"git add ." wwas the run followed by "git status" to show the newly added files in the feature branch.
-"git commit -m " added working files to feature branch"
-The dev branch was then checked out and the changes from the feature branch merged by running "git merge F231228-001"
-The Test branch was then checked out and the changes from the dev branch merged by running "git merge dev"
-The main branch was then checked out and the changes from the Test branch merged by running "git merge Test"
-Each of the branches were then check out again and the following commands were run to merge changes to Github
-- git push --set-upstream origin F231228-001
-- git push --set-upstream origin dev
-- git push --set-upstream origin Test
-
-The branch F231228-001 would normally then be deleted following best recommended practices however to show the full history it was not in this assignment.
-
-The exercises for Python were broken down in 12 Headings and are included in a directory entitled Python in the Python repo.
+#### Conclusion ### 
+Both methods wored and and successfully updated however  Gitflow was more complex and probably suits a larger development team working on larger projects.
