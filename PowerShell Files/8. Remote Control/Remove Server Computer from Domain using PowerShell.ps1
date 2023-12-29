@@ -1,0 +1,1 @@
+Remove-Computer -UnjoinDomaincredential ads\Administrator -PassThru -Verbose -Force

@@ -72,4 +72,4 @@ Summary of actions
 
 
 #### Conclusion ### 
-Both methods wored and and successfully updated however  Gitflow was more complex and probably suits a larger development team working on larger projects.
+Both methods worked and and successfully updated however  Gitflow was more complex and probably suits a larger development team working on larger projects.
